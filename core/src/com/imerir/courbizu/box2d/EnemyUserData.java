@@ -15,7 +15,7 @@ public class EnemyUserData extends UserData {
     public EnemyUserData(float width, float height, String[] textureRegions) {
         super(width, height);
         userDataType = UserDataType.ENEMY;
-        linearVelocity = Constants.ENEMY_LINEAR_VELOCITY;
+        linearVelocity = new Vector2(Constants.ENEMY_LINEAR_VELOCITY, 0);
         this.textureRegions = textureRegions;
     }
 

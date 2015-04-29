@@ -3,6 +3,7 @@ package com.imerir.courbizu.Stages;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
@@ -119,6 +120,7 @@ public class GameStage extends Stage implements ContactListener {
         if (!BodyUtils.bodyInBounds(body)) {
             if (BodyUtils.bodyIsEnemy(body) && !runner.isHit()) {
                 createEnemy();
+                Constants.ENEMY_LINEAR_VELOCITY *= 1.2f;
             }
             world.destroyBody(body);
         }
@@ -165,7 +167,7 @@ public class GameStage extends Stage implements ContactListener {
     /**
      * Helper function to get the actual coordinates in my world
      * @param x
-     * @param y
+     * @param y)
      */
     private void translateScreenToWorldCoordinates(int x, int y) {
         getCamera().unproject(touchPoint.set(x, y, 0));
