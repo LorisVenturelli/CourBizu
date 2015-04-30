@@ -1,5 +1,7 @@
 package com.imerir.courbizu.utils;
 
+import com.badlogic.gdx.math.Vector2;
+
 /**
  * Created by rcdsm on 29/04/15.
  */
