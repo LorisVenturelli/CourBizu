@@ -27,6 +27,7 @@ public class AudioManager {
         music.setLooping(true);
         playMusic();
 
+        coinSound = createSound("coin.wav");
         //coinSound = createSound("coin.wav");
         gameOverSound = createSound("gameover.wav");
     }

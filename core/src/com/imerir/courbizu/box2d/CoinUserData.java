@@ -1,8 +1,8 @@
 package com.imerir.courbizu.box2d;
 
 import com.badlogic.gdx.math.Vector2;
-import com.imerir.courbizu.Constants;
 import com.imerir.courbizu.enums.UserDataType;
+import com.imerir.courbizu.utils.Constants;
 
 /**
  * Created by rcdsm on 29/04/15.

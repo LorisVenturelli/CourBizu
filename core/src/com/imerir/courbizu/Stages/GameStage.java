@@ -173,6 +173,7 @@ public class GameStage extends Stage implements ContactListener {
             Coin coin = coins.get(pos);
             coin.remove();
             coins.removeIndex(pos);
+            AudioManager.getInstance().playCoinSound();
 
         }
     }

@@ -1,6 +1,7 @@
 package com.imerir.courbizu.enums;
 
-import com.imerir.courbizu.Constants;
+
+import com.imerir.courbizu.utils.Constants;
 
 /**
  * Created by rcdsm on 29/04/15.

@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.imerir.courbizu.Constants;
 import com.imerir.courbizu.box2d.CoinUserData;
+import com.imerir.courbizu.utils.Constants;
 
 /**
  * Created by rcdsm on 29/04/15.

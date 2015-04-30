@@ -42,12 +42,12 @@ public class Constants {
     public static float ENEMY_LINEAR_VELOCITY_MULTIPLIER = 1.08f;
 
     public static final float COIN_X = 30f;
-    public static final float COIN_DENSITY = RUNNER_DENSITY;
-    public static final float FLYING_COIN_Y = 5f; // VITESSE
+    public static final float COIN_DENSITY = 10f;
+    public static final float FLYING_COIN_Y = 5f;
+
     public static final Vector2 COIN_LINEAR_VELOCITY = new Vector2(-10f, 0);
 
     public static final String BACKGROUND_IMAGE_PATH = "background.png";
-    public static final String COIN_IMAGE_PATH ="coin.png";
     public static final String GROUND_IMAGE_PATH = "ground.png";
 
     public static final String CHARACTERS_ATLAS_PATH = "characters.txt";
