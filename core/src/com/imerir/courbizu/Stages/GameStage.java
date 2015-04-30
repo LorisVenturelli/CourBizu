@@ -1,7 +1,6 @@
 package com.imerir.courbizu.Stages;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
@@ -17,6 +16,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScalingViewport;
 import com.imerir.courbizu.Actors.Background;
+import com.imerir.courbizu.Actors.Decor;
 import com.imerir.courbizu.Actors.Coin;
 import com.imerir.courbizu.Actors.Enemy;
 import com.imerir.courbizu.Actors.Ground;
@@ -66,6 +66,7 @@ public class GameStage extends Stage implements ContactListener {
         setUpWorld();
         setupCamera();
         setUpScore();
+        setUpDecor();
         AudioManager.getInstance().init();
         setupTouchControlAreas();
     }
@@ -80,8 +81,16 @@ public class GameStage extends Stage implements ContactListener {
         createCoin();
     }
 
+    private void setUpDecor() {
+        Decor decor = new Decor();
+        decor.setZIndex(800);
+        addActor(decor);
+    }
+
     private void setUpBackground() {
-        addActor(new Background());
+        Background background = new Background();
+        background.setZIndex(1);
+        addActor(background);
     }
 
     private void setUpGround() {
@@ -91,7 +100,14 @@ public class GameStage extends Stage implements ContactListener {
 
     private void setUpRunner() {
         runner = new Runner(WorldUtils.createRunner(world));
+        runner.setZIndex(10);
         addActor(runner);
+    }
+
+    private void createEnemy() {
+        Enemy enemy = new Enemy(WorldUtils.createEnemy(world));
+        enemy.setZIndex(10);
+        addActor(enemy);
     }
 
     private void setupCamera() {
@@ -145,11 +161,6 @@ public class GameStage extends Stage implements ContactListener {
             }
             world.destroyBody(body);
         }
-    }
-
-    private void createEnemy() {
-        Enemy enemy = new Enemy(WorldUtils.createEnemy(world));
-        addActor(enemy);
     }
 
     private void createCoin() {

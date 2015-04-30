@@ -46,10 +46,8 @@ public class Ground extends GameActor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
-        batch.draw(textureRegion, textureRegionBounds1.x, screenRectangle.y, screenRectangle.getWidth(),
-                screenRectangle.getHeight());
-        batch.draw(textureRegion, textureRegionBounds2.x, screenRectangle.y, screenRectangle.getWidth(),
-                screenRectangle.getHeight());
+        //batch.draw(textureRegion, textureRegionBounds1.x, screenRectangle.y, screenRectangle.getWidth(), screenRectangle.getHeight());
+        //batch.draw(textureRegion, textureRegionBounds2.x, screenRectangle.y, screenRectangle.getWidth(), screenRectangle.getHeight());
     }
 
     private boolean leftBoundsReached(float delta) {
