@@ -1,0 +1,144 @@
+jump_2.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jump1
+  rotate: false
+  xy: 2, 2
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump10
+  rotate: false
+  xy: 2, 142
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump11
+  rotate: false
+  xy: 2, 282
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump12
+  rotate: false
+  xy: 244, 2
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump13
+  rotate: false
+  xy: 244, 142
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump14
+  rotate: false
+  xy: 244, 282
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump15
+  rotate: false
+  xy: 486, 2
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump16
+  rotate: false
+  xy: 486, 142
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump17
+  rotate: false
+  xy: 486, 282
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump18
+  rotate: false
+  xy: 728, 2
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump19
+  rotate: false
+  xy: 728, 142
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump2
+  rotate: false
+  xy: 728, 282
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump20
+  rotate: false
+  xy: 970, 2
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump3
+  rotate: false
+  xy: 970, 142
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump4
+  rotate: false
+  xy: 970, 282
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump5
+  rotate: false
+  xy: 1212, 2
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump6
+  rotate: false
+  xy: 1454, 2
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump7
+  rotate: false
+  xy: 1212, 142
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump8
+  rotate: false
+  xy: 1454, 142
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1
+jump9
+  rotate: false
+  xy: 1212, 282
+  size: 240, 138
+  orig: 240, 138
+  offset: 0, 0
+  index: -1

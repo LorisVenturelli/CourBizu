@@ -1,0 +1,165 @@
+jump.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jump1
+  rotate: false
+  xy: 1024, 2
+  size: 104, 100
+  orig: 270, 124
+  offset: 75, 15
+  index: -1
+jump10
+  rotate: false
+  xy: 1724, 96
+  size: 192, 90
+  orig: 270, 124
+  offset: 35, 17
+  index: -1
+jump11
+  rotate: false
+  xy: 1358, 2
+  size: 219, 96
+  orig: 270, 124
+  offset: 22, 15
+  index: -1
+jump12
+  rotate: false
+  xy: 104, 2
+  size: 218, 102
+  orig: 270, 124
+  offset: 19, 13
+  index: -1
+jump13
+  rotate: false
+  xy: 324, 2
+  size: 217, 102
+  orig: 270, 124
+  offset: 30, 5
+  index: -1
+jump14
+  rotate: false
+  xy: 543, 2
+  size: 208, 102
+  orig: 270, 124
+  offset: 25, 5
+  index: -1
+jump15
+  rotate: false
+  xy: 753, 2
+  size: 163, 102
+  orig: 270, 124
+  offset: 43, 15
+  index: -1
+jump16
+  rotate: false
+  xy: 1918, 94
+  size: 120, 88
+  orig: 270, 124
+  offset: 63, 17
+  index: -1
+jump17
+  rotate: false
+  xy: 388, 106
+  size: 114, 80
+  orig: 270, 120
+  offset: 73, 17
+  index: -1
+jump18
+  rotate: false
+  xy: 1171, 102
+  size: 137, 82
+  orig: 270, 122
+  offset: 62, 17
+  index: -1
+jump19
+  rotate: false
+  xy: 1590, 98
+  size: 132, 88
+  orig: 270, 124
+  offset: 53, 13
+  index: -1
+jump2
+  rotate: false
+  xy: 1246, 2
+  size: 110, 98
+  orig: 270, 122
+  offset: 75, 11
+  index: -1
+jump20
+  rotate: false
+  xy: 1705, 2
+  size: 124, 92
+  orig: 270, 124
+  offset: 61, 13
+  index: -1
+jump21
+  rotate: false
+  xy: 1130, 2
+  size: 114, 98
+  orig: 270, 124
+  offset: 75, 9
+  index: -1
+jump22
+  rotate: false
+  xy: 918, 2
+  size: 104, 102
+  orig: 270, 124
+  offset: 83, 11
+  index: -1
+jump23
+  rotate: false
+  xy: 2, 2
+  size: 100, 106
+  orig: 270, 124
+  offset: 83, 5
+  index: -1
+jump3
+  rotate: false
+  xy: 1579, 2
+  size: 124, 94
+  orig: 270, 128
+  offset: 65, 19
+  index: -1
+jump4
+  rotate: false
+  xy: 1831, 2
+  size: 139, 90
+  orig: 270, 130
+  offset: 54, 31
+  index: -1
+jump5
+  rotate: false
+  xy: 1442, 100
+  size: 146, 86
+  orig: 270, 124
+  offset: 51, 19
+  index: -1
+jump6
+  rotate: false
+  xy: 1024, 104
+  size: 145, 82
+  orig: 270, 124
+  offset: 52, 19
+  index: -1
+jump7
+  rotate: false
+  xy: 104, 106
+  size: 144, 80
+  orig: 270, 124
+  offset: 57, 17
+  index: -1
+jump8
+  rotate: false
+  xy: 250, 106
+  size: 136, 80
+  orig: 270, 124
+  offset: 59, 19
+  index: -1
+jump9
+  rotate: false
+  xy: 1310, 102
+  size: 130, 82
+  orig: 270, 124
+  offset: 65, 25
+  index: -1

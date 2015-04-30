@@ -1,0 +1,88 @@
+roulade.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+accroupi2
+  rotate: false
+  xy: 2, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+accroupi3
+  rotate: false
+  xy: 164, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+accroupi4
+  rotate: false
+  xy: 326, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+accroupi5
+  rotate: false
+  xy: 488, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+debout
+  rotate: false
+  xy: 650, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+roulade1
+  rotate: false
+  xy: 812, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+roulade2
+  rotate: false
+  xy: 974, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+roulade3
+  rotate: false
+  xy: 1136, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+roulade4
+  rotate: false
+  xy: 1298, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+roulade5
+  rotate: false
+  xy: 1460, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+roulade6
+  rotate: false
+  xy: 1622, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1
+roulade7
+  rotate: false
+  xy: 1784, 2
+  size: 160, 170
+  orig: 160, 170
+  offset: 0, 0
+  index: -1

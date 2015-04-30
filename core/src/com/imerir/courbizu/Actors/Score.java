@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.imerir.courbizu.utils.Constants;
 import com.imerir.courbizu.utils.FontManager;
 
 /**
@@ -29,10 +28,6 @@ public class Score extends Actor {
     @Override
     public void act(float delta) {
         super.act(delta);
-
-        if(!Constants.APP_GAME)
-            return;
-
         //if (GameManager.getInstance().getGameState() != GameState.RUNNING) {
         //    return;
         //}
