@@ -1,9 +1,9 @@
-package com.imerir.courbizu;
+package com.imerir.courbizu.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import com.imerir.courbizu.Stages.GameStage;
+import com.imerir.courbizu.stages.GameStage;
 
 /**
  * Created by rcdsm on 29/04/15.
