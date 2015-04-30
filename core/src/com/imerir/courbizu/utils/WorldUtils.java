@@ -1,4 +1,4 @@
-package com.imerir.courbizu;
+package com.imerir.courbizu.utils;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -12,7 +12,6 @@ import com.imerir.courbizu.box2d.RunnerUserData;
 import com.imerir.courbizu.box2d.UserData;
 import com.imerir.courbizu.enums.CoinType;
 import com.imerir.courbizu.enums.EnemyType;
-import com.imerir.courbizu.utils.RandomUtils;
 
 /**
  * Created by rcdsm on 29/04/15.

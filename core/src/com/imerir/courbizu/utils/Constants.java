@@ -1,4 +1,4 @@
-package com.imerir.courbizu;
+package com.imerir.courbizu.utils;
 
 import com.badlogic.gdx.math.Vector2;
 

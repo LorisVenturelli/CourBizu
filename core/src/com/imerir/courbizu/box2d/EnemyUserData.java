@@ -1,7 +1,7 @@
 package com.imerir.courbizu.box2d;
 
 import com.badlogic.gdx.math.Vector2;
-import com.imerir.courbizu.Constants;
+import com.imerir.courbizu.utils.Constants;
 import com.imerir.courbizu.enums.UserDataType;
 
 /**

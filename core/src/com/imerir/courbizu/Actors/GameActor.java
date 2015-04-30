@@ -3,7 +3,7 @@ package com.imerir.courbizu.Actors;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.imerir.courbizu.Constants;
+import com.imerir.courbizu.utils.Constants;
 import com.imerir.courbizu.box2d.UserData;
 
 /**
