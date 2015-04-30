@@ -3,7 +3,6 @@ package com.imerir.courbizu.Stages;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
@@ -20,6 +19,7 @@ import com.imerir.courbizu.Actors.Background;
 import com.imerir.courbizu.Actors.Enemy;
 import com.imerir.courbizu.Actors.Ground;
 import com.imerir.courbizu.Actors.Runner;
+import com.imerir.courbizu.Actors.Score;
 import com.imerir.courbizu.Constants;
 import com.imerir.courbizu.WorldUtils;
 import com.imerir.courbizu.utils.BodyUtils;
@@ -48,11 +48,14 @@ public class GameStage extends Stage implements ContactListener {
 
     private Vector3 touchPoint;
 
+    private Score score;
+
     public GameStage() {
         super(new ScalingViewport(Scaling.stretch, VIEWPORT_WIDTH, VIEWPORT_HEIGHT,
                 new OrthographicCamera(VIEWPORT_WIDTH, VIEWPORT_HEIGHT)));
         setUpWorld();
         setupCamera();
+        setUpScore();
         setupTouchControlAreas();
     }
 
@@ -120,7 +123,9 @@ public class GameStage extends Stage implements ContactListener {
         if (!BodyUtils.bodyInBounds(body)) {
             if (BodyUtils.bodyIsEnemy(body) && !runner.isHit()) {
                 createEnemy();
-                Constants.ENEMY_LINEAR_VELOCITY *= 1.2f;
+                Constants.ENEMY_LINEAR_VELOCITY *= Constants.ENEMY_LINEAR_VELOCITY_MULTIPLIER;
+                Constants.WORLD_GRAVITY *= Constants.ENEMY_LINEAR_VELOCITY_MULTIPLIER;
+                Constants.RUNNER_JUMPING_LINEAR_IMPULSE *= Constants.ENEMY_LINEAR_VELOCITY_MULTIPLIER;
             }
             world.destroyBody(body);
         }
@@ -202,6 +207,15 @@ public class GameStage extends Stage implements ContactListener {
     @Override
     public void postSolve(Contact contact, ContactImpulse impulse) {
 
+    }
+
+    private void setUpScore() {
+        Rectangle scoreBounds = new Rectangle(getCamera().viewportWidth * 0.90f,
+                                                getCamera().viewportHeight * 0.95f,
+                                                getCamera().viewportWidth / 8,
+                                                getCamera().viewportHeight / 8);
+        score = new Score(scoreBounds);
+        addActor(score);
     }
 
 }

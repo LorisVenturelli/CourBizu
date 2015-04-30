@@ -17,7 +17,7 @@ import com.imerir.courbizu.utils.RandomUtils;
 public  class  WorldUtils  {
 
     public static World createWorld() {
-        return new World(Constants.WORLD_GRAVITY, true);
+        return new World(new Vector2(0, Constants.WORLD_GRAVITY), true);
     }
 
     public  static Body createGround ( World  world )  {

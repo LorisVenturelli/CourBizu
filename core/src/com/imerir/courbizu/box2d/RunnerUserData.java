@@ -15,7 +15,7 @@ public class RunnerUserData extends UserData {
 
     public RunnerUserData(float width, float height) {
         super(width, height);
-        jumpingLinearImpulse = Constants.RUNNER_JUMPING_LINEAR_IMPULSE;
+        jumpingLinearImpulse = new Vector2(0, Constants.RUNNER_JUMPING_LINEAR_IMPULSE);
         userDataType = UserDataType.RUNNER;
     }
 
