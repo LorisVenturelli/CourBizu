@@ -27,6 +27,7 @@ public class BodyUtils {
         switch (userData.getUserDataType()) {
             case RUNNER:
             case ENEMY:
+            case COIN:
                 return body.getPosition().x + userData.getWidth() / 2 > 0;
         }
 
@@ -37,6 +38,12 @@ public class BodyUtils {
         UserData userData = (UserData) body.getUserData();
 
         return userData != null && userData.getUserDataType() == UserDataType.ENEMY;
+    }
+
+    public static boolean bodyIsCoin(Body body) {
+        UserData userData = (UserData) body.getUserData();
+
+        return userData != null && userData.getUserDataType() == UserDataType.COIN;
     }
 
 }

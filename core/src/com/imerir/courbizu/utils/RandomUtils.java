@@ -1,8 +1,11 @@
 package com.imerir.courbizu.utils;
 
+import com.imerir.courbizu.enums.CoinType;
 import com.imerir.courbizu.enums.EnemyType;
 
 import java.util.Random;
+
+import sun.security.krb5.internal.crypto.EType;
 
 /**
  * Created by rcdsm on 29/04/15.
@@ -11,6 +14,11 @@ public class RandomUtils {
 
     public static EnemyType getRandomEnemyType() {
         RandomEnum<EnemyType> randomEnum = new RandomEnum<EnemyType>(EnemyType.class);
+        return randomEnum.random();
+    }
+
+    public static CoinType getRandomCoinType() {
+        RandomEnum<CoinType> randomEnum = new RandomEnum<CoinType>(CoinType.class);
         return randomEnum.random();
     }
 

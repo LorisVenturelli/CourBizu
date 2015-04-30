@@ -39,7 +39,13 @@ public class Constants {
     public static float ENEMY_LINEAR_VELOCITY = -10f;
     public static float ENEMY_LINEAR_VELOCITY_MULTIPLIER = 1.08f;
 
+    public static final float COIN_X = 30f;
+    public static final float COIN_DENSITY = RUNNER_DENSITY;
+    public static final float FLYING_COIN_Y = 5f; // VITESSE
+    public static final Vector2 COIN_LINEAR_VELOCITY = new Vector2(-10f, 0);
+
     public static final String BACKGROUND_IMAGE_PATH = "background.png";
+    public static final String COIN_IMAGE_PATH ="coin.png";
     public static final String GROUND_IMAGE_PATH = "ground.png";
 
     public static final String CHARACTERS_ATLAS_PATH = "characters.txt";
@@ -54,5 +60,7 @@ public class Constants {
     public static final String[] RUNNING_WIDE_ENEMY_REGION_NAMES = new String[] {"worm_walk1", "worm_walk2"};
     public static final String[] FLYING_SMALL_ENEMY_REGION_NAMES = new String[] {"bee_fly1", "bee_fly2"};
     public static final String[] FLYING_WIDE_ENEMY_REGION_NAMES = new String[] {"fly_fly1", "fly_fly2"};
+    public static final String[] FLYING_SMALL_COIN_REGION_NAMES = new String[] {"coin_coin", "coin_coin"};
+
 
 }
