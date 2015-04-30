@@ -102,6 +102,9 @@ public class GameStage extends Stage implements ContactListener {
     public void act(float delta) {
         super.act(delta);
 
+        if(!Constants.APP_GAME)
+            return;
+
         Array<Body> bodies = new Array<Body>(world.getBodyCount());
         world.getBodies(bodies);
 

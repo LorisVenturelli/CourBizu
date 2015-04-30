@@ -6,9 +6,9 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.imerir.courbizu.box2d.RunnerUserData;
 import com.imerir.courbizu.utils.AudioManager;
 import com.imerir.courbizu.utils.Constants;
-import com.imerir.courbizu.box2d.RunnerUserData;
 
 /**
  * Created by rcdsm on 29/04/15.
@@ -72,9 +72,8 @@ public class Runner extends GameActor {
         if (!(jumping || dodging || hit)) {
             body.applyLinearImpulse(getUserData().getJumpingLinearImpulse(), body.getWorldCenter(), true);
             jumping = true;
+            AudioManager.getInstance().restartMusic();
         }
-
-        AudioManager.getInstance().restartMusic();
 
     }
 
@@ -105,6 +104,8 @@ public class Runner extends GameActor {
         body.applyAngularImpulse(getUserData().getHitAngularImpulse(), true);
         hit = true;
         AudioManager.getInstance().stopMusic();
+        AudioManager.getInstance().playGameOverSound();
+        Constants.APP_GAME = false;
     }
 
     public boolean isHit() {
