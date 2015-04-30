@@ -26,6 +26,10 @@ public class Background extends Actor {
 
     @Override
     public void act(float delta) {
+
+        if(!Constants.APP_GAME)
+            return;
+
         if (leftBoundsReached(delta)) {
             resetBounds();
         } else {

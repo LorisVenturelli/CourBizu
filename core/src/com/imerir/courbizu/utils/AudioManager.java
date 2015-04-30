@@ -13,6 +13,7 @@ public class AudioManager {
     private static AudioManager ourInstance = new AudioManager();
     private static Music music;
     private static Sound coinSound;
+    private static Sound gameOverSound;
 
     private AudioManager() {
     }
@@ -27,6 +28,7 @@ public class AudioManager {
         playMusic();
 
         //coinSound = createSound("coin.wav");
+        gameOverSound = createSound("gameover.wav");
     }
 
     public Sound createSound(String soundFileName) {
@@ -51,16 +53,21 @@ public class AudioManager {
     }
 
     public void playCoinSound() {
-        coinSound.play();
+        coinSound.play(2.0f);
     }
 
     public void stopCoinSound() {
         coinSound.stop();
     }
 
+    public void playGameOverSound() {
+        gameOverSound.play();
+    }
+
     public static void dispose() {
         music.dispose();
         coinSound.dispose();
+        gameOverSound.dispose();
     }
 
 }
