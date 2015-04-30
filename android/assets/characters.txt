@@ -100,6 +100,13 @@ worm_walk1
   orig: 63, 23
   offset: 0, 0
   index: -1
+coin_coin
+  rotate: false
+  xy: 81, 330
+  size: 63, 43
+  orig: 63, 43
+  offset: 0, 0
+  index: -1
 alienGreen_run2
   rotate: false
   xy: 72, 97

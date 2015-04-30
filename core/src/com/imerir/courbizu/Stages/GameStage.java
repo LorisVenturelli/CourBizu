@@ -16,13 +16,18 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScalingViewport;
 import com.imerir.courbizu.Actors.Background;
+import com.imerir.courbizu.Actors.Decor;
+import com.imerir.courbizu.Actors.Coin;
 import com.imerir.courbizu.Actors.Enemy;
 import com.imerir.courbizu.Actors.Ground;
 import com.imerir.courbizu.Actors.Runner;
 import com.imerir.courbizu.Actors.Score;
+import com.imerir.courbizu.utils.AudioManager;
 import com.imerir.courbizu.utils.Constants;
 import com.imerir.courbizu.utils.WorldUtils;
 import com.imerir.courbizu.utils.BodyUtils;
+
+import java.awt.Paint;
 
 /**
  * Created by rcdsm on 29/04/15.
@@ -50,12 +55,19 @@ public class GameStage extends Stage implements ContactListener {
 
     private Score score;
 
+    Array<Coin> coins;
+
     public GameStage() {
         super(new ScalingViewport(Scaling.stretch, VIEWPORT_WIDTH, VIEWPORT_HEIGHT,
                 new OrthographicCamera(VIEWPORT_WIDTH, VIEWPORT_HEIGHT)));
+
+        coins = new Array<Coin>();
+
         setUpWorld();
         setupCamera();
         setUpScore();
+        setUpDecor();
+        AudioManager.getInstance().init();
         setupTouchControlAreas();
     }
 
@@ -66,10 +78,19 @@ public class GameStage extends Stage implements ContactListener {
         setUpGround();
         setUpRunner();
         createEnemy();
+        createCoin();
+    }
+
+    private void setUpDecor() {
+        Decor decor = new Decor();
+        decor.setZIndex(800);
+        addActor(decor);
     }
 
     private void setUpBackground() {
-        addActor(new Background());
+        Background background = new Background();
+        background.setZIndex(1);
+        addActor(background);
     }
 
     private void setUpGround() {
@@ -79,7 +100,14 @@ public class GameStage extends Stage implements ContactListener {
 
     private void setUpRunner() {
         runner = new Runner(WorldUtils.createRunner(world));
+        runner.setZIndex(10);
         addActor(runner);
+    }
+
+    private void createEnemy() {
+        Enemy enemy = new Enemy(WorldUtils.createEnemy(world));
+        enemy.setZIndex(10);
+        addActor(enemy);
     }
 
     private void setupCamera() {
@@ -99,6 +127,9 @@ public class GameStage extends Stage implements ContactListener {
     @Override
     public void act(float delta) {
         super.act(delta);
+
+        if(!Constants.APP_GAME)
+            return;
 
         Array<Body> bodies = new Array<Body>(world.getBodyCount());
         world.getBodies(bodies);
@@ -122,6 +153,7 @@ public class GameStage extends Stage implements ContactListener {
     private void update(Body body) {
         if (!BodyUtils.bodyInBounds(body)) {
             if (BodyUtils.bodyIsEnemy(body) && !runner.isHit()) {
+                createCoin();
                 createEnemy();
                 Constants.ENEMY_LINEAR_VELOCITY *= Constants.ENEMY_LINEAR_VELOCITY_MULTIPLIER;
                 Constants.WORLD_GRAVITY *= Constants.ENEMY_LINEAR_VELOCITY_MULTIPLIER;
@@ -131,9 +163,30 @@ public class GameStage extends Stage implements ContactListener {
         }
     }
 
-    private void createEnemy() {
-        Enemy enemy = new Enemy(WorldUtils.createEnemy(world));
-        addActor(enemy);
+    private void createCoin() {
+        Coin coin = new Coin(WorldUtils.createCoin(world));
+        addActor(coin);
+        coins.add(coin);
+
+    }
+
+    private void removeCoin(Body body) {
+        int pos = -1;
+        for(int i=0;i<coins.size;i++) {
+            Coin coin = coins.get(i);
+            if(coin.getBody()==body) {
+                pos = i;
+                break;
+            }
+        }
+
+        if(pos!=-1) {
+            Coin coin = coins.get(pos);
+            coin.remove();
+            coins.removeIndex(pos);
+            AudioManager.getInstance().playCoinSound();
+
+        }
     }
 
     @Override
@@ -172,7 +225,7 @@ public class GameStage extends Stage implements ContactListener {
     /**
      * Helper function to get the actual coordinates in my world
      * @param x
-     * @param y)
+     * @param y
      */
     private void translateScreenToWorldCoordinates(int x, int y) {
         getCamera().unproject(touchPoint.set(x, y, 0));
@@ -187,6 +240,14 @@ public class GameStage extends Stage implements ContactListener {
         if ((BodyUtils.bodyIsRunner(a) && BodyUtils.bodyIsEnemy(b)) ||
                 (BodyUtils.bodyIsEnemy(a) && BodyUtils.bodyIsRunner(b))) {
             runner.hit();
+        } else if ((BodyUtils.bodyIsRunner(a) && BodyUtils.bodyIsCoin(b)) ||
+                (BodyUtils.bodyIsCoin(a) && BodyUtils.bodyIsRunner(b))) {
+            if(BodyUtils.bodyIsCoin(a)) {
+                removeCoin(a);
+            }
+            else if(BodyUtils.bodyIsCoin(b)) {
+                removeCoin(b);
+            }
         } else if ((BodyUtils.bodyIsRunner(a) && BodyUtils.bodyIsGround(b)) ||
                 (BodyUtils.bodyIsGround(a) && BodyUtils.bodyIsRunner(b))) {
             runner.landed();

@@ -1,7 +1,6 @@
 package com.imerir.courbizu.utils;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 
@@ -27,6 +26,7 @@ public class AudioManager {
         music.setLooping(true);
         playMusic();
 
+        coinSound = createSound("coin.wav");
         //coinSound = createSound("coin.wav");
         gameOverSound = createSound("gameover.wav");
     }

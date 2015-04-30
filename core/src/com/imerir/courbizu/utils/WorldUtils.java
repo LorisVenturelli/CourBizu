@@ -6,26 +6,29 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.imerir.courbizu.box2d.EnemyUserData;
+import com.imerir.courbizu.box2d.CoinUserData;
 import com.imerir.courbizu.box2d.GroundUserData;
 import com.imerir.courbizu.box2d.RunnerUserData;
+import com.imerir.courbizu.box2d.UserData;
+import com.imerir.courbizu.enums.CoinType;
 import com.imerir.courbizu.enums.EnemyType;
 
 /**
  * Created by rcdsm on 29/04/15.
  */
-public  class  WorldUtils  {
+public class WorldUtils {
 
     public static World createWorld() {
         return new World(new Vector2(0, Constants.WORLD_GRAVITY), true);
     }
 
-    public  static Body createGround ( World  world )  {
-        BodyDef bodyDef  =  new  BodyDef ();
-        bodyDef . position . set ( new Vector2( Constants . GROUND_X ,  Constants . GROUND_Y ));
-        Body  body  =  world . createBody ( bodyDef );
-        PolygonShape shape  =  new  PolygonShape ();
-        shape . setAsBox ( Constants . GROUND_WIDTH  /  2 ,  Constants . GROUND_HEIGHT  /  2 );
-        body . createFixture(shape, Constants.GROUND_DENSITY);
+    public static Body createGround (World world)  {
+        BodyDef bodyDef = new BodyDef ();
+        bodyDef.position.set(new Vector2(Constants.GROUND_X, Constants.GROUND_Y));
+        Body body = world.createBody(bodyDef);
+        PolygonShape shape = new PolygonShape ();
+        shape.setAsBox(Constants.GROUND_WIDTH / 2, Constants.GROUND_HEIGHT / 2);
+        body.createFixture(shape, Constants.GROUND_DENSITY);
         body.setUserData(new GroundUserData(Constants.GROUND_WIDTH, Constants.GROUND_HEIGHT));
         shape.dispose();
         return body;
@@ -57,6 +60,22 @@ public  class  WorldUtils  {
         body.createFixture(shape, enemyType.getDensity());
         body.resetMassData();
         EnemyUserData userData = new EnemyUserData(enemyType.getWidth(), enemyType.getHeight(), enemyType.getRegions());
+        body.setUserData(userData);
+        shape.dispose();
+        return body;
+    }
+
+    public static Body createCoin(World world) {
+        CoinType coinType = RandomUtils.getRandomCoinType();
+        BodyDef bodyDef = new BodyDef();
+        bodyDef.type = BodyDef.BodyType.DynamicBody;
+        bodyDef.position.set(new Vector2(coinType.getX(), coinType.getY()));
+        PolygonShape shape = new PolygonShape();
+        shape.setAsBox(coinType.getWidth() / 2, coinType.getHeight() / 2);
+        Body body = world.createBody(bodyDef);
+        body.createFixture(shape, coinType.getDensity());
+        body.resetMassData();
+        CoinUserData userData = new CoinUserData(coinType.getWidth(), coinType.getHeight(), coinType.getRegions());
         body.setUserData(userData);
         shape.dispose();
         return body;

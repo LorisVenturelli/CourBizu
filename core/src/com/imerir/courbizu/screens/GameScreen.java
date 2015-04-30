@@ -2,6 +2,7 @@ package com.imerir.courbizu.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.imerir.courbizu.Stages.GameStage;
 
@@ -27,32 +28,32 @@ public class GameScreen implements Screen {
     }
 
     @Override
-    public  void  resize ( int  width ,  int  height )  {
+    public void resize (int width, int height)  {
 
     }
 
     @Override
-    public  void  show ()  {
+    public void show() {
 
     }
 
     @Override
-    public  void  hide ()  {
+    public void hide() {
 
     }
 
     @Override
-    public  void  pause ()  {
+    public void pause() {
 
     }
 
     @Override
-    public  void  resume ()  {
+    public void resume() {
 
     }
 
     @Override
-    public  void  dispose ()  {
+    public void dispose() {
 
     }
 
