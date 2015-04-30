@@ -20,6 +20,7 @@ import com.imerir.courbizu.Actors.Enemy;
 import com.imerir.courbizu.Actors.Ground;
 import com.imerir.courbizu.Actors.Runner;
 import com.imerir.courbizu.Actors.Score;
+import com.imerir.courbizu.utils.AudioManager;
 import com.imerir.courbizu.utils.Constants;
 import com.imerir.courbizu.utils.WorldUtils;
 import com.imerir.courbizu.utils.BodyUtils;
@@ -56,6 +57,7 @@ public class GameStage extends Stage implements ContactListener {
         setUpWorld();
         setupCamera();
         setUpScore();
+        AudioManager.getInstance().init();
         setupTouchControlAreas();
     }
 
