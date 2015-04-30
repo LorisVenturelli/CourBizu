@@ -1,10 +1,7 @@
 package com.imerir.courbizu.Actors;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.imerir.courbizu.utils.FontManager;
@@ -49,6 +46,10 @@ public class Score extends Actor {
 
     public int getScore() {
         return (int) Math.floor(score);
+    }
+
+    public void addScore(int score){
+        this.score += score;
     }
 
     public void setMultiplier(int multiplier) {
